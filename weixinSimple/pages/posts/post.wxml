@@ -1,0 +1,26 @@
+<!--pages/posts/post.wxml-->
+<!-- <text>pages/posts/post.wxml</text> -->
+
+<!-- 引用模板的方法和路径 -->
+<import src="./post-item/post-item-template.wxml" /> 
+
+<view>
+  <swiper catchtap='onSwiperTap' indicator-dots autoplay indicator-active-color="#fff" circular>
+    <swiper-item>
+      <image src='/images/wx.png' data-post-id='3'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/iqiyi.png' data-post-id='5'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/vr.png' data-post-id='4'></image>
+    </swiper-item>    
+  </swiper>
+  <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="index" wx:key="item.postId">
+    <!-- template --><!-- template is属性的值就是模板的name-->
+    <view> <!-- data-xxxx  是自定义属性 -->
+      <template is="postItem" data="{{...item}}"/>
+    </view>
+    
+  </block>
+</view>

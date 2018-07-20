@@ -1,0 +1,66 @@
+1. 只有<text>标签包住的文字才能在真机上长按复制；
+
+2.页面跳转：wx.navigateTo({url:""})跳转是可以返回的； wx.redirectTo({url: '’})是无法返回的
+
+3.onUnload --- 页面注释或卸载时（wx.redirectTo()）执行，且是在最新的页面首先执行
+
+4.onHide ----- 页面隐藏时（wx.navigateTo()）执行，且是在最新的页面首先执行
+
+5.js文件导出数据或方法时，必须得有
+	value = [{},{}]
+	module.exports = {
+  	   key: value
+	}
+
+6.js文件引入数据或方法时，要在文件开头
+	var postsData = require("../../data/posts-data.js")   //只能用相对路径
+
+7.wxss文件引入数据或方法时，要在文件开头
+	@import "post-item/post-item-template.wxss";	//相对路径
+
+
+8.模板文件中，模板必须要有name属性
+
+
+9.wxml文件中如需要引用模板，则在文件开头
+	<import src="./post-item/post-item-template.wxml" /> 
+
+ 在需要用到模块的地方        template is属性的值就是模板的name
+	<block wx:for="{{postList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+
+    
+		<template is="postItem" data="{{item}}" />
+
+  
+	</block>
+
+
+10.   ...item 就是把 item对象平铺展开
+
+
+11.  this.setData({
+
+        isCollected: collected
+
+     })
+    this.setData中的对象，会自动附加给data，相当于这些数据在data中初始化了
+
+
+
+12.设置全局变量     在app.js中设置全局变量，在其他js文件中如果要用到这个全局变量，则在直接用getApp()方法就能获取到app.js中的全部变量
+
+
+13.做数据绑定的时候，最好是把数据初始化，避免出错
+
+14.打开微信内置地图  wx.openLocation({})
+
+
+
+
+
+
+
+
+
+
+

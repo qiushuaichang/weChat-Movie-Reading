@@ -1,0 +1,23 @@
+<!--pages/posts/post-item/post-item-template.wxml-->
+<!-- <text>pages/posts/post-item/post-item-template.wxml</text> -->
+<template name="postItem">
+  <view class='post-container'>
+    <view class='post-author-date'>
+      <image src='{{avatar}}' class='post-author'></image>
+      <text class='post-date'>{{date}}</text>
+    </view>
+    <text class='post-title'>{{title}}</text>
+    <image src='{{imgSrc}}' class='post-image' catchtap="onPostTap" data-post-id='{{postId}}'></image>
+    <text class='post-content'>{{content}}</text>
+    <view class='post-like'>
+      <view class='post-like-container' catchtap='onCollectionCountTap' data-post-id='{{postId}}'>
+        <image src='/images/icon/chat.png' class='post-like-image'></image>
+        <text class='post-like-font'> {{collection}}</text>
+      </view>
+      <view class='post-like-container' catchtap='onReadingCountTap' data-post-id='{{postId}}'>
+        <image src='/images/icon/view.png' class='post-like-image'></image>
+        <text class='post-like-font'> {{reading}}</text>
+      </view>
+    </view>
+  </view>
+</template>

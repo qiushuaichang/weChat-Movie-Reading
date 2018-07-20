@@ -1,0 +1,45 @@
+/**index.wxss**/
+.container {
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+} 
+
+page {
+  background: #b3d4db;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx;
+  margin-top: 16rpx;
+  border-radius: 50%;
+}
+.username{
+  margin-top: 80rpx;
+  font-size:32rpx;
+  font-weight: bold;
+}
+
+.moto-container{
+  margin-top: 200rpx;
+  border: 1rpx solid #405f80;
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
+.moto {
+  font-size:22rpx;
+  font-weight: bold;
+  color: #405f80;
+  line-height: 80rpx;
+}
